@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Penggajian Pegawai</title>
+  </head>
+  <body>
+    <script>
+      let pegawai = "Wira";
+      let jabatan = "manager";
+      let status = "lajang";
+      let gajiPokok,
+        tunjangan,
+        bpjs,
+        tunjanganStatus,
+        total = 0;
+
+      switch (jabatan) {
+        case "manager":
+          gajiPokok = 10000000;
+          break;
+        case "asisten_manager":
+          gajiPokok = 8000000;
+          break;
+        case "staff":
+          gajiPokok = 5000000;
+          break;
+
+        default:
+          gajiPokok = 0;
+          break;
+      }
+      tunjangan = 0.1 * gajiPokok;
+      bpjs = 0.1 * gajiPokok;
+      tunjanganStatus = status == "menikah" ? 0.1 * gajiPokok : 0;
+
+      total = gajiPokok + tunjangan + bpjs + tunjanganStatus;
+
+      document.write(
+        "<h1>Data Upah Pegawai</h1> " +
+          "<hr />" +
+          "<h3>Nama: " +
+          pegawai +
+          " </h3>" +
+          "<h3>Jabatan: " +
+          jabatan +
+          "</h3>" +
+          "<h3>Status: " +
+          status +
+          "</h3>" +
+          "<p>===============================================</p>" +
+          "<p>Gaji Pokok : " +
+          gajiPokok +
+          "</p>" +
+          "<p>Tunjangan Jabatan : " +
+          tunjangan +
+          "</p>" +
+          "<p>Tunjangan Keluarga : " +
+          tunjanganStatus +
+          "</p>" +
+          "<p>BPJS : " +
+          bpjs +
+          "</p>" +
+          "<h4>Total : " +
+          total +
+          "</h4>"
+      );
+    </script>
+  </body>
+</html>
